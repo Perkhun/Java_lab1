@@ -32,18 +32,44 @@ public class CustomDouble {
     public double toDouble() {
         return (double) this.intNumber + this.doubleNumber;
     }
-
-    public CustomDouble sum (CustomDouble second) {
+    public CustomDouble plus (CustomDouble second) {
         double result = this.toDouble() + second.toDouble();
         return new CustomDouble(result);
     }
-
-    public CustomDouble subtraction (CustomDouble second) {
+    public CustomDouble plus (double second) {
+        return this.plus(new CustomDouble(second));
+    }
+    public CustomDouble subtract (CustomDouble second) {
         double result = this.toDouble() - second.toDouble();
         return new CustomDouble(result);
     }
+    public CustomDouble subtract (double second) {
+        return this.subtract(new CustomDouble(second));
+    }
+    public CustomDouble multiply (CustomDouble second) {
+        double result =  intNumber * second.intNumber + intNumber * second.doubleNumber + doubleNumber * second.intNumber + doubleNumber * second.doubleNumber;
+        return new CustomDouble(result);
+    }
+    public CustomDouble multiply (double second) {
+        return this.multiply(new CustomDouble(second));
+    }
+    public CustomDouble divide(CustomDouble second) {
+        if (second.equals(new CustomDouble(0,0))) {
+            return new CustomDouble(0,0);
+        }
+        double result = this.toDouble() / second.toDouble();
+        return new CustomDouble(result);
+    }
 
-    public void comparison (CustomDouble second) {
+
+    public CustomDouble divide(double second) {
+        if (second == 0) {
+            return new CustomDouble(0,0);
+        }
+        return this.divide(new CustomDouble(second));
+    }
+
+    public void compare (CustomDouble second) {
         double result = this.toDouble() - second.toDouble();
         if (result == 0) {
             System.out.println("Перше число рівне другому");

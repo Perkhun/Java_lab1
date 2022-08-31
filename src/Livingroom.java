@@ -1,19 +1,16 @@
-public class Livingroom {
+public class Livingroom extends Room{
     private int numberOfSofas;
     private int numberOfChairs;
-    //public int numberOfTvs;
     private String tv;
     private int bookShelf;
     private int anotherFurniture;
 
-
-    public Livingroom(final int numberOfSofas, final int numberOfChairs, final String tv,
+    public Livingroom(final int numberOfDoors, final int numberOfWindows, final int numberOfLaps,
+                      final String color, final double size, final int furniture, final int numberOfSofas,
+                      final int numberOfChairs, final String tv,
                       final int bookShelf, final int anotherFurniture) {
+        super(numberOfDoors, numberOfWindows, numberOfLaps, color, size, furniture);
         this.numberOfSofas = numberOfSofas;
-        this.numberOfChairs = numberOfChairs;
-        this.tv = tv;
-        this.bookShelf = bookShelf;
-        this.anotherFurniture = anotherFurniture;
     }
 
     public int getNumberOfSofas() {
@@ -59,6 +56,15 @@ public class Livingroom {
     @Override
     public String toString() {
         return "Livingroom{" +
+                System.lineSeparator() +
+                ", numberOfDoors: " + getNumberOfDoors() +
+                ", numberOfWindows: " + getNumberOfWindows() +
+                System.lineSeparator() +
+                ", numberOfLaps: " + getNumberOfLaps() +
+                ", color: '" + getColor() + '\'' +
+                ", size: " + getSize() +
+                ", furniture: " + getFurniture()
+                + System.lineSeparator() +
                 "numberOfSofas=" + numberOfSofas +
                 ", numberOfChairs=" + numberOfChairs +
                 ", tv='" + tv + '\'' +

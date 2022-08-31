@@ -14,10 +14,10 @@ public class CheckOfProducts {
     public void setListCheckOfProduct(List<CheckOfProduct> listCheckOfProduct) {
         this.listCheckOfProduct = listCheckOfProduct;
     }
-     public int finalSuma() {
+     public int totalPrice() {
        int sum = 0;
        for (CheckOfProduct checkOfProduct : listCheckOfProduct) {
-           sum += checkOfProduct.getCount() * checkOfProduct.getProduct().getPrice();
+           sum += checkOfProduct.calc();
        }
        return sum;
     }

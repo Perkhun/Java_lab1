@@ -22,4 +22,11 @@ public class Product {
     public int getPrice() {
         return price;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" + getNameOfProduct()+ '\'' +
+                ", price: " + getPrice() + "UAH " +
+                '}';
+    }
 }

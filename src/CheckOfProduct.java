@@ -23,7 +23,18 @@ public class CheckOfProduct {
         this.count = count;
     }
 
-    public int calc(Product product, int count) {
+    public int calc()
+    {
         return count * product.getPrice();
+    }
+
+    @Override
+    public String toString() {
+        return " name: " + getProduct().getNameOfProduct() +
+                System.lineSeparator() +" price: " + getProduct().getPrice() +
+                System.lineSeparator() +
+                " count=" + getCount() +
+                System.lineSeparator() + " " +
+                calc() + " UAH" + System.lineSeparator();
     }
 }

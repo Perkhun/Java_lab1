@@ -2,17 +2,15 @@ import java.util.List;
 
 public class Task_10 {
     public static void main(String[] args) {
+
         final House house = new House(List.of(
-                new Room( new TypeOfRoom(
-                        new Kitchen(1, 6, "samsung", "philips",
-                        1, "samsung")),
-                        1, 2, 5, "red", 50, 3),
-                new Room(new TypeOfRoom(
-                        new Bedroom(2,"samsung", 2)), 1,
-                        2, 4, "blue", 52, 2)
+                new Kitchen(1, 2, 5, "red", 50, 3,
+                        1, 6, "samsung", "philips", 1,
+                        "samsung"),
+                new Bedroom(1, 3, 6, "blue", 72, 4,
+                        2, "samsung", 4)
+        ),1, 3, 4);
 
-
-        ), 1, 3, 4);
 
         System.out.println(house);
 

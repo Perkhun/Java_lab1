@@ -1,4 +1,4 @@
-public class Kitchen {
+public class Kitchen extends Room {
     private int numberOfTable;
     private int numberOfChair;
     private String oven;
@@ -6,8 +6,11 @@ public class Kitchen {
     private int numberOfWashbasin;
     private String refrigerator;
 
-    public Kitchen(final int numberOfTable, final int numberOfChair, final String oven, final String kettle,
+    public Kitchen(final int numberOfDoors, final int numberOfWindows, final int numberOfLaps, final String color,
+                   final double size, final int furniture, final int numberOfTable, final int numberOfChair,
+                   final String oven, final String kettle,
                    final int numberOfWashbasin, final String refrigerator) {
+        super(numberOfDoors, numberOfWindows, numberOfLaps, color, size, furniture);
         this.numberOfTable = numberOfTable;
         this.numberOfChair = numberOfChair;
         this.oven = oven;
@@ -67,12 +70,22 @@ public class Kitchen {
     @Override
     public String toString() {
         return "Kitchen{" +
-                "numberOfTable=" + numberOfTable +
-                ", numberOfChair=" + numberOfChair +
-                ", oven='" + oven + '\'' +
-                ", kettle='" + kettle + '\'' +
-                ", numberOfWashbasin=" + numberOfWashbasin +
-                ", refrigerator='" + refrigerator + '\'' +
-                '}';
+                System.lineSeparator() +
+                ", numberOfDoors: " + getNumberOfDoors() +
+                ", numberOfWindows: " + getNumberOfWindows() +
+                System.lineSeparator() +
+                ", numberOfLaps: " + getNumberOfLaps() +
+                ", color: '" + getColor() + '\'' +
+                ", size: " + getSize() +
+                ", furniture: " + getFurniture()
+                + System.lineSeparator() +
+                "numberOfTable: " + numberOfTable +
+                ", numberOfChai: =" + numberOfChair +
+                ", oven: " + oven + '\'' +
+                System.lineSeparator() +
+                ", kettle: " + kettle + '\'' +
+                ", numberOfWashbasin: " + numberOfWashbasin +
+                ", refrigerator: " + refrigerator + '\'' +
+                '}' + System.lineSeparator();
     }
 }

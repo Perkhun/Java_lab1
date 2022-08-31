@@ -1,12 +1,12 @@
 public class Task_2 {
     public static void main(String[] args) {
-        final String stringOne = "hello world";
-        System.out.println("String one -  before remote:   " + stringOne);
+        final String string = "hello world";
+        System.out.println("String -  before remote:   " + string);
 
-        char charOne = 'o';
-        System.out.println("String One -  after remote:   " + delete(stringOne, charOne));
+        char chars = 'o';
+        System.out.println("String -  after remote:   " + delete(string, chars));
     }
-   public static String delete(String stringOne, char charOne) {
-        return stringOne.replace(charOne+"", "");
+   public static String delete(String string, char chars) {
+        return string.replace(chars+"", "");
    }
 }
