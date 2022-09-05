@@ -1,8 +1,8 @@
 import java.util.Comparator;
 
-public class Comparing implements Comparator <String> {
+public class StringComparator implements Comparator <String> {
     private char symbols;
-    public Comparing(final char symbols) {
+    public StringComparator(final char symbols) {
         this.symbols = symbols;
     }
 
@@ -15,8 +15,8 @@ public class Comparing implements Comparator <String> {
     }
 
     public int compare(String stringOne, String stringTwo) {
-        long s1 = stringOne.chars().filter(ss -> ss == symbols).count();
-        long s2 = stringTwo.chars().filter(ss -> ss == symbols).count();
+        long s1 = stringOne.chars().filter(s -> s == symbols).count();
+        long s2 = stringTwo.chars().filter(s -> s == symbols).count();
         return Long.compare(s1, s2) * -1;
     }
 }

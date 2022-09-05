@@ -8,7 +8,7 @@ public class Task_1  {
         }
     }
     public static void sort(String[] string, char symbols) {
-        Arrays.sort(string, new Comparing(symbols));
+        Arrays.sort(string, new StringComparator(symbols));
     }
 
     public static void main(String[] args) {
